@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\Author;
+
+class AuthorController extends Controller
+{
+    public function index() {
+    $authors = Author::all();
+
+    return response()->json([
+            "sucess" => true,
+            "massage" => "Get all resources",
+            "data" => $authors
+        ], 200);
+}
+}
